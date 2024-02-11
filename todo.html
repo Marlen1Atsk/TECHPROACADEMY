@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Ορισμός του χαρακτηριστικού συνόλου χαρακτήρων -->
+  <meta charset="UTF-8">
+  
+  <!-- Ορισμός της προβολής για τη συμβατότητα με συσκευές -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Τίτλος της ιστοσελίδας -->
+  <title>Todo App</title>
+  
+  <!-- Σύνδεση με το εξωτερικό αρχείο CSS για τη μορφοποίηση -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Κεντρικός χώρος για την εφαρμογή Todo -->
+  <div class="app">
+    <!-- Επικεφαλίδα της εφαρμογής Todo -->
+    <h1 class="header">Todo App</h1>
+    
+    <!-- Τμήμα φίλτρων που περιλαμβάνει το πεδίο αναζήτησης και την αναδιπλούμενη λίστα -->
+    <div class="filters">
+      <!-- Πεδίο εισαγωγής κειμένου για την αναζήτηση εργασιών -->
+      <input type="text" id="searchTodo" placeholder="Search tasks">
+      
+      <!-- Αναδιπλούμενη λίστα για το φιλτράρισμα εργασιών -->
+      <select id="filterTodo">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="incomplete">Incomplete</option>
+      </select>
+    </div>
+    
+    <!-- Λίστα για την εμφάνιση των εργασιών (Todo) -->
+    <ul id="todoList" class="todo-list"></ul>
+    
+    <!-- Φόρμα για την προσθήκη νέων εργασιών -->
+    <div class="todo-form">
+      <!-- Πεδίο εισαγωγής κειμένου για τη δημιουργία νέας εργασίας -->
+      <input type="text" id="newTodo" placeholder="Add a new task">
+      
+      <!-- Κουμπί για την προσθήκη νέας εργασίας -->
+      <button onclick="addTodo()" class="add-button">Add task</button>
+    </div>
+    
+    <!-- Κουμπί για την εναλλαγή ανάμεσα σε φωτεινό και σκούρο θέμα -->
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+
+  <!-- Φόρτωση εξωτερικών βιβλιοθηκών -->
+  <script src="https://cdn.jsdelivr.net/npm/localforage@1.10.0/dist/localforage.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  
+  <!-- Συμπερίληψη αρχείου JavaScript για την εφαρμογή Todo -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+@charset "UTF-8";
+/* Ορισμός μεταβλητής για το χρώμα beige */
+/* Ορισμός μεταβλητής για το ανοιχτό καφέ χρώμα */
+/* Ορισμός μεταβλητής για το πράσινο χρώμα */
+/* Ορισμός μεταβλητής για το σκούρο μπλε χρώμα */
+body {
+  font-family: "Arial", sans-serif; /* Ορισμός γραμματοσειράς */
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* Ορισμός χρώματος φόντου της σελίδας */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Εφέ μετάβασης για την αλλαγή χρωμάτων */
+}
+
+.app {
+  max-width: 600px; /* Ορισμός μέγιστου πλάτους της εφαρμογής */
+  margin: 0 auto; /* Κέντραρισμα της εφαρμογής στο κέντρο της σελίδας */
+  padding: 20px; /* Εσωτερικό padding της εφαρμογής */
+  background-color: #f3f1ef; /* Ορισμός χρώματος φόντου της εφαρμογής */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Προσθήκη σκίασης */
+  border-radius: 10px; /* Ακρογωνιαίοι για μοντέρνο στυλ */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Εφέ μετάβασης για την αλλαγή χρωμάτων */
+}
+.app .header {
+  font-size: 36px; /* Μέγεθος γραμματοσειράς */
+  font-weight: bold; /* Έντονη γραμματοσειρά */
+  margin-bottom: 20px; /* Κενό κάτω από την επικεφαλίδα */
+  color: #fff; /* Χρώμα κειμένου */
+  text-align: center; /* Κείμενο κεντρικά */
+  text-transform: uppercase; /* Κείμενο σε κεφαλαίους χαρακτήρες */
+  background-color: #6d4c41; /* Χρώμα φόντου της επικεφαλίδας */
+  padding: 15px; /* Εσωτερικό padding της επικεφαλίδας */
+  border-radius: 10px 10px 0 0; /* Ακρογωνιαίοι μόνο στα άνω αριστερά και δεξιά */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Προσθήκη σκίασης */
+  font-family: "Dancing Script", cursive; /* Επιλογή γραμματοσειράς */
+}
+.app .filters {
+  display: flex; /* Εμφάνιση σε γραμμή */
+  justify-content: space-between; /* Ευθυγράμμιση στο άκρο αριστερά και δεξιά */
+  margin-bottom: 30px; /* Κενό κάτω από τα φίλτρα */
+}
+.app #searchTodo,
+.app #filterTodo,
+.app .add-button,
+.app .theme-toggle,
+.app .edit-button,
+.app .delete-button,
+.app .complete-button {
+  padding: 20px; /* Προσθήκη padding στα κουμπιά */
+  border: none; /* Καμία περίγραμμα γύρω από τα κουμπιά */
+  border-radius: 5px; /* Κυκλικά άκρα */
+  cursor: pointer; /* Εμφάνιση δείκτη κατά τον περίδεσμο */
+  color: white; /* Λευκό χρώμα για το κείμενο */
+  font-weight: bold; /* Έντονη γραμματοσειρά */
+  transition: background-color 0.3s ease; /* Εφέ μετάβασης για την αλλαγή χρωμάτων */
+}
+.app #searchTodo {
+  background-color: transparent; /* Διαφανές φόντο για το πεδίο αναζήτησης */
+  color: #333; /* Χρώμα κειμένου */
+}
+.app #filterTodo {
+  background-color: #163f2e; /* Χρώμα φόντου για το φίλτρο */
+  margin-right: 15px; /* Απόσταση δεξιά από το επόμενο στοιχείο */
+}
+.app .add-button,
+.app .theme-toggle {
+  background-color: #044e16; /* Χρώμα φόντου για τα κουμπιά προσθήκης και θέματος */
+}
+.app .theme-toggle.night-mode {
+  background-color: #3498db; /* Χρώμα φόντου για τη νυχτερινή λειτουργία */
+}
+.app .edit-button,
+.app .complete-button,
+.app .delete-button {
+  background-color: #163f2e; /* Χρώμα φόντου για τα κουμπιά επεξεργασίας, ολοκλήρωσης και διαγραφής */
+}
+.app .add-button:hover,
+.app #searchTodo:hover,
+.app #filterTodo:hover,
+.app .edit-button:hover,
+.app .delete-button:hover,
+.app .complete-button:hover,
+.app .theme-toggle:hover {
+  background-color: #467b53; /* Χρώμα φόντου κατά την αιώρηση πάνω από τα κουμπιά */
+}
+.app .delete-button:disabled {
+  background-color: #D2B48C; /* Χρώμα φόντου για απενεργοποιημένο κουμπί διαγραφής */
+  cursor: not-allowed; /* Απαγόρευση δείκτη κατά την απενεργοποίηση */
+}
+.app .todo-list {
+  list-style-type: none; /* Αφαίρεση σημαντικών σημάτων λίστας */
+  padding: 30px; /* Εσωτερικό padding της λίστας */
+}
+.app .todo-item {
+  display: flex; /* Εμφάνιση σε γραμμή */
+  flex-direction: column; /* Ορισμός κατακόρυφης διάταξης */
+  align-items: flex-start; /* Ευθυγράμμιση αριστερά */
+  border: 1px solid #ddd; /* Περίγραμμα γύρω από το κάθε task */
+  padding: 15px; /* Εσωτερικό padding του κάθε task */
+  margin-bottom: 15px; /* Κενό κάτω από κάθε task */
+  border-radius: 5px; /* Κυκλικά άκρα */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Προσθήκη σκίασης */
+}
+.app .todo-content {
+  display: flex; /* Εμφάνιση σε γραμμή */
+  align-items: center; /* Ευθυγράμμιση στο κέντρο */
+  justify-content: space-between; /* Ευθυγράμμιση αριστερά και δεξιά */
+  width: 100%; /* Πλήρες πλάτος του parent */
+}
+.app span {
+  margin-bottom: 10px; /* Κενό κάτω από το κείμενο του task */
+  overflow-wrap: break-word; /* Αναδιαμόρφωση λέξεων σε περίπτωση υπερχείλισης */
+  word-wrap: break-word; /* Αναδιαμόρφωση λέξεων σε περίπτωση υπερχείλισης */
+}
+.app .buttons {
+  display: flex; /* Εμφάνιση κουμπιών σε γραμμή */
+  gap: 10px; /* Απόσταση μεταξύ κουμπιών */
+}
+.app .edit-button,
+.app .complete-button,
+.app .delete-button {
+  padding: 10px; /* Εσωτερικό padding των κουμπιών επεξεργασίας, ολοκλήρωσης και διαγραφής */
+  margin-top: 5px; /* Απόσταση από το πάνω μέρος του task */
+}
+.app #newTodo {
+  flex: 1; /* Χρήση του διαθέσιμου χώρου */
+  padding: 8px; /* Εσωτερικό padding */
+  border: 1px solid #ddd; /* Περίγραμμα γύρω από το input */
+  border-radius: 5px; /* Κυκλικά άκρα */
+  margin-right: 10px; /* Απόσταση δεξιά από το επόμενο στοιχείο */
+}
+.app #newTodo::-moz-placeholder {
+  color: #333; /* Χρώμα πλαισίου κειμένου placeholder */
+}
+.app #newTodo::placeholder {
+  color: #333; /* Χρώμα πλαισίου κειμένου placeholder */
+}
+.app .completed {
+  background-color: #F5F5DC; /* Χρώμα φόντου για τα ολοκληρωμένα tasks */
+  text-decoration: line-through; /* Διακοσμητική γραμμή μέσα από τα ολοκληρωμένα tasks */
+}
+.app .todo-form {
+  display: flex; /* Εμφάνιση σε γραμμή */
+  margin-top: 20px; /* Απόσταση από το πάνω μέρος της φόρμας */
+}
+.app input {
+  flex: 1; /* Χρήση του διαθέσιμου χώρου */
+  padding: 10px; /* Εσωτερικό padding */
+  border: 1px solid #ddd; /* Περίγραμμα γύρω από το input */
+  border-radius: 5px; /* Κυκλικά άκρα */
+}
+.dark-theme .app {
+  background-color: #222; /* Χρώμα φόντου σε σκοτεινό θέμα */
+  color: #210d0d; /* Χρώμα κειμένου σε σκοτεινό θέμα */
+}
+.app .dark-theme .app {
+  background-color: #333; /* Χρώμα φόντου στην εφαρμογή σε σκοτεινό θέμα */
+}
+.app .dark-theme .header {
+  background-color: #444; /* Χρώμα φόντου της κεφαλίδας σε σκοτεινό θέμα */
+}
+.app .dark-theme #searchTodo,
+.app .dark-theme #filterTodo,
+.app .dark-theme .add-button,
+.app .dark-theme .theme-toggle,
+.app .dark-theme .edit-button,
+.app .dark-theme .delete-button,
+.app .dark-theme .complete-button {
+  background-color: #444; /* Χρώμα φόντου για τα στοιχεία ελέγχου σε σκοτεινό θέμα */
+  color: #ffffff; /* Λευκό χρώμα κειμένου σε σκοτεινό θέμα */
+}
+.app .dark-theme .todo-list {
+  background-color: #333; /* Χρώμα φόντου της λίστας σε σκοτεινό θέμα */
+}
+.app #searchTodo {
+  background-color: transparent; /* Διαφανές φόντο για το πεδίο αναζήτησης */
+  border: 1px solid #ddd; /* Περίγραμμα γύρω από το input */
+  color: #333; /* Χρώμα κειμένου */
+  padding: 8px; /* Εσωτερικό padding */
+  border-radius: 5px; /* Κυκλικά άκρα */
+}
+.app #searchTodo::-moz-placeholder {
+  color: #333; /* Χρώμα πλαισίου κειμένου placeholder */
+}
+.app #searchTodo::placeholder {
+  color: #333; /* Χρώμα πλαισίου κειμένου placeholder */
+}
+.app .theme-toggle {
+  background-color: #163f2e; /* Χρώμα φόντου για το κουμπί εναλλαγής θέματος */
+  color: rgb(174, 51, 51); /* Χρώμα κειμένου */
+  padding: 10px; /* Εσωτερικό padding */
+  border: none; /* Καμία περίγραμμα γύρω από το κουμπί */
+  border-radius: 5px; /* Κυκλικά άκρα */
+  cursor: pointer; /* Εμφάνιση δείκτη κατά τον περίδεσμο */
+  font-weight: bold; /* Έντονη γραμματοσειρά */
+  transition: background-color 0.3s ease; /* Εφέ μετάβασης για την αλλαγή χρώματος */
+  margin-top: 20px; /* Απόσταση από το πάνω μέρος της σελίδας */
+}
+.app .theme-toggle:hover {
+  background-color: #333; /* Χρώμα φόντου κατά την αιώρηση πάνω από το κουμπί */
+}
+.app .todo-form .theme-toggle {
+  margin-top: 20px; /* Απόσταση από το πάνω μέρος της φόρμας */
+}/*# sourceMappingURL=styles.css.map */
